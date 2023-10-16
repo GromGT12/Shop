@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 @Entity
-@Table(name = "user")
+@Table(name = "users")
 public class User {
     private static final String SEQ_NAME = "user_seq";
 
@@ -24,7 +24,11 @@ public class User {
     private boolean archive;
     @Enumerated(EnumType.STRING)
     private Role role;
+    //@OneToOne(cascade = CascadeType.REMOVE)
+    //private Bucket bucket;
+    // Добавьте поле "bucket_id" и связь с сущностью Bucket
     @OneToOne(cascade = CascadeType.REMOVE)
+    @JoinColumn(name = "bucket_id") // Укажите имя столбца, с которым будет установлена связь
     private Bucket bucket;
 
 }
