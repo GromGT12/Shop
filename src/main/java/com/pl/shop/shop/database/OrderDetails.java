@@ -1,4 +1,4 @@
-package com.pl.shop.shop.model;
+package com.pl.shop.shop.database;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
